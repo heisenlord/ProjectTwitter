@@ -1,0 +1,37 @@
+.profilepic{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 100px;
+    
+  
+}
+.profileedsspace{
+    background-color: black;
+    display: flex;
+  
+    align-items: center;
+    flex-direction: column;
+}
+.profilespace{
+    width: 105%;
+    background-color: black;
+    margin-top: -20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+ 
+}
+
+
+.proful{
+  
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+}
+.fullpost{
+    width: 100%;
+}

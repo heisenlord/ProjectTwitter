@@ -1,0 +1,60 @@
+.sideul{
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    width: 80px;
+    margin-left: 20px;
+    align-items: space-between;
+    list-style: none;
+    /* border-right: 0.3px rgb(108, 104, 104) solid; */
+
+}
+.sideli{
+    margin-bottom: 100px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+
+}
+.sideimg{
+    background-color: rgb(243, 84, 84);
+    border-radius: 10px;
+
+}
+.Side{
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+}
+svg{
+    width: 30px;
+   
+}
+svg path {
+    fill: rgb(255, 255, 255);
+  }
+  
+.not{
+    color: rgb(247, 108, 2);
+}
+.sideimgpp{
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    object-fit: cover;
+}
+.profilepics{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.btn{
+    background-color: black;
+    border: none;
+    cursor: pointer;
+}
+.btn:hover svg{
+    width:40px;
+  
+}
