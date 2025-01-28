@@ -1,0 +1,24 @@
+.searchimg{
+ width: 80%;
+ border-radius: 20px;
+ filter: grayscale(1);
+}
+.imgspace{
+    display: flex;
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+    
+}
+.searchh{
+    padding: 10px;
+    color: rgb(65, 56, 77);
+}
+.pdev{
+    padding-top: 30px;
+    padding-bottom: 30px;
+  
+}
+.engine{
+    color: rgb(180, 160, 160);
+}

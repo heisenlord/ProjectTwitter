@@ -25,5 +25,39 @@
 .textareali{
     margin-top: 30px;
     width: 80%;
-   
+
 }
+.stextarea{
+    font-size: 1.2rem;
+}
+
+.spacebutton{
+    display: flex;
+   
+    justify-self: end;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    padding: 0px 20px 0px 20px;
+    margin-right: 15%;
+    border-radius: 30px;
+}
+.pspacebutton{
+    font-size: 1.2rem;
+   font-weight: 100;
+}
+/* space.css */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    z-index: 9999;
+  }
+  

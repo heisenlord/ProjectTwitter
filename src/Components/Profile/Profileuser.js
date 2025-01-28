@@ -1,7 +1,7 @@
 import React from 'react'
 import { Side } from '../Side/Side';
 import { Trending } from '../Trending/Trending';
-import { Profileds } from './Profileds';
+import { Profileselect } from './Profileselect';
 
 export const Profileuser = () => {
   return (
@@ -9,7 +9,7 @@ export const Profileuser = () => {
       <div className='flg'>
             
             <Side className="sides"/>
-           <Profileds />
+           <Profileselect />
             <Trending/>
             </div>
     </div>

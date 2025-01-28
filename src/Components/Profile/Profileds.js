@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import pp from '../../Assests/ProfilePic.jpg';
 import './profile.css';
 import tt2 from '../../Assests/ProfilePic.jpg';
@@ -6,9 +6,12 @@ import { Svg } from '../Post/Svg';
 import { Comment } from '../Post/Comment';
 import { Bookmark } from '../Post/Bookmark';
 import { Like } from '../Post/Like';
-  
 
 export const Profileds = () => {
+    useEffect(() => {
+        document.title = "Profile";
+      }, []);
+    
   return (
     <div className='space  profileedsspace'>   
       <div className='profilespace'>

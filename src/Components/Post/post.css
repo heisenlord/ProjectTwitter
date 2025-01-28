@@ -3,12 +3,22 @@
 }
 .post{
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: start;
     flex-direction: row;
+    left: 0px;
     padding: 20px 20px 0px 20px;
+    width: 100%;
+    
   
     
+}
+.postHelper{
+    width: 100%;
+
+  
+
+    left: 0px;
 }
 .name{
 font-size: 18px;
