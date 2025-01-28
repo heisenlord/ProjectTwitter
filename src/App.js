@@ -4,6 +4,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Profileuser } from './Components/Profile/Profileuser';
 import { Mainpage } from './Components/Mainpage/Mainpage';
+import { Profileds } from './Components/Profile/Profileds';
 import { Nav } from './Components/Nav/Nav';
 
 import { PTweet } from './Components/PTweet/PTweet';
@@ -17,7 +18,7 @@ function App() {
        <BrowserRouter>
         <Routes>
           <Route path="/" element={<Mainpage />} />
-          <Route path="/profile" element={< Profileuser/>} />
+          <Route path="/profile" element={    <Profileds/>} />
           <Route path="/post/:id" element={<PTweet/>}/>
           <Route path="/notifications" element={<Notifications/>}/>
           <Route path="/search" element={<Search/>}/>
