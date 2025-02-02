@@ -115,7 +115,7 @@ export const Pdummyhelp = () => {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
-  if (!post) return <p>No post found.</p>;
+  if (!post) return <p>No post found</p>;
 
   return (
     <div >
