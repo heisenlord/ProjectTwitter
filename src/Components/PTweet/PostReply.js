@@ -53,7 +53,7 @@ export const PostReplyothers = ({ id, profilePic, name, handle, tweet }) => {
 
       <div className="postcontent">
         <h4 className="name">
-          {name} <span className="blue-tick"><Svg /></span> <span className="id">{handle}</span>
+          {name} <span className="blue-tick"><Svg /></span> <span className="id">@{handle}</span>
         </h4>
         <h1 className="tweet">{tweet}</h1>
       </div>

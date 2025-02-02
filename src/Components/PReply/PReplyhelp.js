@@ -109,7 +109,7 @@ export const PReplyhelp = () => {
             </li>
           ))
         ) : (
-          <p>No replies yet</p>
+          <p></p>
         )}
         <li className='replyingli'>
           <h1 className='replying'>
