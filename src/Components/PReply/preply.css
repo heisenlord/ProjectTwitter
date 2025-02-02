@@ -1,0 +1,33 @@
+.replying{
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: rgb(255, 255, 255);
+}
+.replyingli{
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    
+}
+.repblue{
+    color: rgb(39, 132, 190);
+    font-weight: 100;
+    margin-left: 0.2rem;
+}
+.btnrep{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   height: 30px;
+
+
+}
+.pspacebutton{
+    width: 100%;
+    text-align: end;
+}
+.btnrepdiv{
+    padding-bottom: 1.5rem;
+
+}

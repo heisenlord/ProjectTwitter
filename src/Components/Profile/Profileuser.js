@@ -9,7 +9,7 @@ export const Profileuser = () => {
       <div className='flg'>
             
             <Side className="sides"/>
-           <Profileds/>
+           <Profileselect/>
             <Trending/>
             </div>
     </div>

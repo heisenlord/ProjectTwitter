@@ -35,3 +35,71 @@
 .fullpost{
     width: 100%;
 }
+.pswelcom{
+    padding: 10px;
+    border-radius: 1.2rem;
+}
+.inputuser{
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-radius: 1.2rem;
+    height: 80%;
+}
+.useridtext{
+   
+    
+    color: rgb(0, 0, 0);
+    background-color: black;
+}
+.useridinput{
+    border: 1px solid white;
+    border-radius: 10px;padding: 10px;
+    margin: 10px;
+}
+.inputdivimg{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    height:  30%;
+
+    
+}
+.imgppps{
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+ border-radius: 5rem;
+    padding: 10px;
+    filter: grayscale(10);
+    background-color: rgb(66, 66, 66);
+    transition: 0.3s;
+
+}
+.imgppps:hover{
+    width: 100px;
+    height: 100px;
+}
+.imgppps:active{
+    background-color: rgb(255, 255, 255);
+
+}
+.spanreal{
+    color: rgb(142, 145, 145);
+}
+.profilePicPreview{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5rem;
+    padding: 1rem;
+    filter: grayscale(10);
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 1.2rem;
+
+}

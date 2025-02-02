@@ -8,3 +8,14 @@
     padding-left: 30px;
 
 }
+.replypic{
+    padding: 5px;
+    background-color: white;
+}
+.App{
+    cursor: grab;
+
+}
+#imgfor{
+    filter: grayscale(0);
+}

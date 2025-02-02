@@ -37,3 +37,6 @@ p{
 .sides{
   position: sticky;
 }
+.App{
+  cursor: grab;
+}

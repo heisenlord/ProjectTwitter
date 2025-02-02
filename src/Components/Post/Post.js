@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from "react";
 import './post.css';
 import tt1 from '../../Assests/tt1.jpg';
 import tt2 from '../../Assests/dhtfi_pp.jpg';
@@ -7,13 +7,14 @@ import { Svg } from './Svg';
 import { Like } from './Like';
 import { Bookmark } from './Bookmark';
 import { Comment } from './Comment';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate, useParams } from 'react-router-dom'; // Import useNavigate
+import { UserContext } from '../UserContext';
 
 const postsData = [
   {
     id: 1,
     profilePic: tt1,
-    name: 'BOB jr',
+    name: 'BOBjr',
     handle: '@not_hillbilly_boi',
     tweet: `Finally, a platform where you'll always get a response. Post anything, and Einstein might explain it, Shakespeare might rhyme it, or Gordon Ramsay might roast it. Conversations guaranteed, validation optional.`,
   },
@@ -36,9 +37,12 @@ const postsData = [
 // Reusable PostItem Component
 export const PostItem = ({ id, profilePic, name, handle, tweet }) => {
   const navigate = useNavigate();
+    const { username} = useContext(UserContext);
+  
 
   const handlePostClick = () => {
-    navigate(`/post/${id}`); // Navigate to /post/:id
+    navigate(`/${username}/post/${id}`); // Nav
+    // igate to /post/:id
   };
 
   return (
@@ -53,6 +57,49 @@ export const PostItem = ({ id, profilePic, name, handle, tweet }) => {
         <h4 className="name">
           {name} <span className="blue-tick"><Svg /></span> <span className="id">{handle}</span>
         </h4>
+   
+        <h1 className="tweet">{tweet}</h1>
+      </div>
+ 
+    </div>
+    <div className="postreactions">
+      <ul className="postreactionsul">
+        <li><Comment /></li>
+        <li><Bookmark /></li>
+        <li><Like /></li>
+      </ul>
+    </div>
+    <div className="line"></div>
+
+  </div>
+
+);
+};
+
+export const PostOthers = ({ id, profilePic, name, handle, tweet }) => {
+  const navigate = useNavigate();
+  const { username} = useContext(UserContext);
+  
+
+  const handlePostClick = () => {
+
+    navigate(`/${username}/${name}/post/${id}`); // Nav
+    // igate to /post/:id
+  };
+
+  return (
+  <div >
+
+    <div onClick={handlePostClick} className="post" >
+  
+      <img className="sideimgpp" src={profilePic} alt={`${name}'s profile`} />
+ 
+
+      <div className="postcontent">
+        <h4 className="name">
+          {name} <span className="blue-tick"><Svg /></span> <span className="id">{handle}</span>
+        </h4>
+   
         <h1 className="tweet">{tweet}</h1>
       </div>
  
@@ -76,7 +123,7 @@ export const Post = () => {
   return (
     <div className="postmain">
       {postsData.map((post) => (
-        <PostItem
+        <PostOthers
           id={post.id}
           profilePic={post.profilePic}
           name={post.name}

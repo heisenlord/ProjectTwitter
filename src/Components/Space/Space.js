@@ -1,54 +1,75 @@
-import React, { useState } from "react";
-import "./space.css";
-import profilpp from "../../Assests/ProfilePic.jpg";
-import { PostItem } from "../Post/Post"; // Import PostItem for dynamic posts
-import { Post } from "../Post/Post";
+import React, { useState, useEffect, useContext } from "react";
+import { useParams, useNavigate, useLocation } from "react-router-dom"; // Import hooks
 import axios from "axios";
-import { v4 as uuidv4 } from "uuid"; // Import UUID for unique IDs
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { v4 as uuidv4 } from "uuid";
+import profilpp from "../../Components/Profile/profilepics/profilepic1.jpeg";
+import { PostItem } from "../Post/Post";
+import { Post } from "../Post/Post";
+import "./space.css";
+import { UserContext } from '../UserContext';
 
 export const Space = () => {
+  const { username, profilePic,pp } = useContext(UserContext);
+  const { name } = useParams(); // Extract name from the URL
   const [postContent, setPostContent] = useState(""); // For new post input
   const [posts, setPosts] = useState([]); // To hold all posts
-  const [isLoading, setIsLoading] = useState(false); // Loading state for the button
-  const navigate = useNavigate(); // Initialize the navigate hook
+  const [isLoading, setIsLoading] = useState(false); // Loading state
+  const navigate = useNavigate();
+  const location = useLocation(); 
+
+  // Fetch posts when component mounts
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3000/posts/byname/${name}`);
+        const reversedPosts = response.data.reverse();
+        setPosts(reversedPosts);
+      } catch (error) {
+        console.error("Error fetching posts:", error);
+      }
+    };
+
+    fetchPosts();
+  }, [name]); // Re-run when name changes
 
   const handlePostClick = async () => {
     if (postContent.trim() === "") {
       alert("Post cannot be empty");
       return;
     }
-
+  
     setIsLoading(true); // Set loading state to true
     const postId = uuidv4(); // Generate a unique ID for the post
-
+  
     try {
       const response = await axios.post("http://localhost:3000/generate", {
         prompt: postContent,
-        pid: postId, // Send the ID along with the prompt
+        pid: postId,
+        name: name, 
+        profilePic:profilePic||pp
       });
-
+  
       console.log("Post successful:", response.data);
-
-      // Add the new post to the posts array
+  
+      // Add new post to the posts array dynamically
       const newPost = {
         id: postId,
-        profilePic: profilpp, // Default profile picture
-        name: "You", // Replace with the user's name dynamically
-        handle: "@your_handle", // Replace with the user's handle dynamically
+        profilePic: profilePic||pp,
+        name: name,
+        handle: `@${name}`,
         tweet: postContent,
       };
-
-      setPosts([newPost, ...posts]); // Add the new post at the top
+  
+      setPosts([newPost, ...posts]); // Add new post at the top
       setPostContent(""); // Clear the textarea
-
+  
       // Navigate to the new post's page after successful submission
-      navigate(`/post/${postId}`);
+      navigate(`${location.pathname}/post/${postId}`);
     } catch (error) {
       console.error("Error posting content:", error);
       alert("Something went wrong. Please try again.");
     } finally {
-      setIsLoading(false); // Set loading to false after the post request
+      setIsLoading(false); // Set loading to false
     }
   };
 
@@ -57,7 +78,7 @@ export const Space = () => {
       <div className="typepost">
         <ul className="typepostul">
           <li className="typepostli">
-            <img className="sideimgpp pp" src={profilpp} alt="Profile" />
+            <img className="sideimgpp pp imgpp" src={profilePic||pp||profilpp} alt="Profile" />
           </li>
           <li className="typepostli textareali">
             <textarea
@@ -72,7 +93,7 @@ export const Space = () => {
         <button
           className="spacebutton"
           onClick={handlePostClick}
-          disabled={isLoading} // Disable the button when loading
+          disabled={isLoading}
         >
           <p className="pspacebutton">{isLoading ? "Posting..." : "NotPost"}</p>
         </button>
@@ -80,11 +101,7 @@ export const Space = () => {
       <div className="line"></div>
 
       {/* Show loading indicator */}
-      {isLoading && (
-        <div className="loading-screen">
-          <p>NotPosting.....</p>
-        </div>
-      )}
+      {isLoading && <div className="loading-screen"><p>NotPosting.....</p></div>}
 
       {/* Render all posts dynamically */}
       <div className="postmain">
@@ -100,7 +117,6 @@ export const Space = () => {
         ))}
       </div>
 
-      {/* Additional Post component */}
       <Post />
     </div>
   );

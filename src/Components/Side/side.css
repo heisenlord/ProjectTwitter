@@ -58,3 +58,6 @@ svg path {
     width:40px;
   
 }
+.ppp{
+    filter: grayscale(1);
+}

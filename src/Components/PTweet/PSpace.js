@@ -1,17 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { PostReply } from "./PostReply";
 import { PostReplies } from "./PostReplies";
-import profilpp from '../../Assests/ProfilePic.jpg';
+import profilpp from "../../Assests/ProfilePic.jpg";
+import { UserContext } from "../UserContext";
 
 export const PSpace = () => {
-  const { id } = useParams();
+  const { username, profilePic, pp } = useContext(UserContext);
+  const {
+    
+    postusid,
+    setPostusid,
+    postProfilepic,
+    setPostProfilepic,
+    postTweet,
+    setPostTweet,
+  } = useContext(UserContext);
+
+  const [replyid, setReplid] = useState(0);
+  const { name, id } = useParams();
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [replies, setReplies] = useState([]);
-  const [randomStart, setRandomStart] = useState(0); // Track random starting index
+  const [randomStart, setRandomStart] = useState(0);
   const navigate = useNavigate();
 
   const profilePics = [
@@ -36,9 +49,8 @@ export const PSpace = () => {
   ];
 
   useEffect(() => {
-    // Generate a random starting index between 0 and 17 when the component mounts
-    const randomIndex = Math.floor(Math.random() * 17); // Range: 0–17
-    setRandomStart(randomIndex);
+    // Generate a random starting index between 0 and profilePics.length - 1
+    setRandomStart(Math.floor(Math.random() * profilePics.length));
   }, []);
 
   useEffect(() => {
@@ -59,21 +71,29 @@ export const PSpace = () => {
   }, [id, navigate]);
 
   useEffect(() => {
-    if (post?.replies) {
-      let reply = post.replies || "";
-      reply = reply
-        .replace(/^\s*```json\s*/, "")
-        .replace(/```\s*$/, "")
-        .trim();
+    if (post) {
+      setPostusid(post.name);
+      setPostProfilepic(post.profilePic || profilpp);
+      setPostTweet(post.tweet);
+    }
+    console.log(post);
+  }, [post]);
 
-      if (reply) {
+  useEffect(() => {
+    if (post?.replies) {
+      let reply = post.replies;
+      
+      if (typeof reply === "string") {
+        reply = reply.replace(/^\s*```json\s*/, "").replace(/```\s*$/, "").trim();
         try {
-          const reps = JSON.parse(reply);
-          setReplies(reps);
+          reply = JSON.parse(reply);
         } catch (error) {
           console.error("Invalid replies JSON:", error);
+          return;
         }
       }
+
+      setReplies(reply);
     }
   }, [post]);
 
@@ -87,7 +107,7 @@ export const PSpace = () => {
         {/* Main Post */}
         <PostReply
           id={post.id}
-          profilePic={profilpp} // Use the random starting index for the main post
+          profilePic={profilePic || pp || profilpp} // Handle undefined profile pic
           name={post.name}
           handle={post.handle}
           tweet={post.tweet}
@@ -99,12 +119,12 @@ export const PSpace = () => {
           {replies.map((reply, index) => (
             <li key={index}>
               <PostReplies
+                repid={replyid + index}
+                postid={post.id}
                 id={reply.userID}
-                profilePic={
-                  profilePics[(randomStart + index) % 18]
-                } // Cycle through the profilePics array starting from randomStart
-                name={reply.username}
-                handle={reply.userID}
+                profilePic={profilePics[(randomStart + index) % profilePics.length]} // Ensure cycling properly
+                name={reply.username.slice(1)}
+                handle={reply.username}
                 tweet={reply.reply}
               />
             </li>
