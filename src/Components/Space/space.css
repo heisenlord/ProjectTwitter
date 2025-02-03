@@ -34,7 +34,7 @@
 .spacebutton{
     display: flex;
    
-    justify-self: end;
+    margin-left: auto;
     color: black;
     background-color: rgb(255, 255, 255);
     padding: 0px 20px 0px 20px;
