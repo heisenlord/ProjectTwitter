@@ -9,6 +9,7 @@
     /* border-right: 0.3px rgb(108, 104, 104) solid; */
 
 }
+
 .sideli{
     margin-bottom: 100px;
     display: flex;
@@ -46,7 +47,7 @@ svg path {
 .profilepics{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
 
 }
 .btn{
@@ -60,4 +61,45 @@ svg path {
 }
 .ppp{
     filter: grayscale(1);
+}
+
+@media (max-width:768px) {
+    .Side{
+        width: 0px;
+        height: 3rem;
+        background-color: black;
+    }
+    .sideli{
+        margin-bottom: 0px;
+    }
+    .sideul{
+        border: 1px solid white;
+        border-radius: 5rem;
+        position: fixed;
+        bottom: 20px;
+        left: 0px;
+        flex-direction: row;
+        height: 10vh;
+        width: 100vw;
+        z-index: 1;
+        justify-content: space-around;
+        align-items: center;
+        background-color: black;
+        filter: blur(10);
+        margin-left: 0px;
+    }
+    .flg{
+        margin: 0px;
+    }
+    .profilepics{
+        display: flex;
+        align-items: start;
+        justify-content: start;
+
+    }
+    svg{
+        width: 30px;
+    }
+
+    
 }

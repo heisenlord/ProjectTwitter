@@ -7,7 +7,7 @@ export const Nav = () => {
     <div className='Nav'>
  
         <ul className='navul'>
-            <li className='navli pp'>
+            <li className='navli pp navli1'>
             </li>
             <li class="navname notatiwtter"><p>
                 Not<span class="Aspan">A</span>Twitter

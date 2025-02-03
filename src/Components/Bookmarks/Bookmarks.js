@@ -4,12 +4,15 @@ import { Trending } from '../Trending/Trending';
 import { Bookmarkeds } from './Bookmarkeds';
 export const Bookmarks = () => {
   return (
-    <div><div className='flg'>
-                            
-                            <Side className="sides"/>
-                           <Bookmarkeds/>
-                            <Trending/>
-                            </div>
-                            </div>
+    <div className="main-container">
+<div className="content-wrapper">
+  <Side className="sides" />
+  <Bookmarkeds/>
+
+  <Trending className="trending" />
+</div>
+</div>
+
   )
 }
+

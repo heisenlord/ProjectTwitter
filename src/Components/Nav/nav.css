@@ -45,3 +45,20 @@ p{
 .notatiwtter{
     cursor: grab;
 }
+@media (max-width: 768px) {
+    .navli1{
+        display: none;
+    }
+    .flg {
+        display: flex;
+        width: 100%;
+        margin: 0px;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .Nav{
+        width: 100%;
+        position: fixed;
+     
+    }
+}

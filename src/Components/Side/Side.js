@@ -74,9 +74,9 @@ export const Side = () => {
         </li>
 
         {/* Profile Pic Link */}
-        <li className="profilepics">
+        <li className="profilepics lipp">
           <Link to="/profile" className="btn">
-            <img className="sideimgpp ppp" src={finalProfilePic} alt="Profile"/>
+            <img className="sideimgpp ppp sidepp" src={finalProfilePic} alt="Profile"/>
           </Link>
         </li>
       </ul>

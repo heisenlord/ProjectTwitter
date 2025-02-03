@@ -5,12 +5,14 @@ import { Searcheds } from './Searcheds';
 export const Search = () => {
   return (
     <div>
-        <div className='flg'>
-                        
-                        <Side className="sides"/>
-                       <Searcheds/>
-                        <Trending/>
-                        </div>
+         <div className="main-container">
+         <div className="content-wrapper">
+           <Side className="sides" />
+           <Searcheds/>
+
+           <Trending className="trending" />
+         </div>
+       </div>
     </div>
   )
 }

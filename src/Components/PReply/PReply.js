@@ -5,15 +5,14 @@ import { PReplyhelp } from './PReplyhelp';
 
 export const PReply = () => {
   return (
-    <div>
-        <div className='flg'>
-                    
-                    <Side className="sides"/>
-                   <PReplyhelp/>
-                    <Trending/>
+    <div className="main-container">
+         <div className="content-wrapper">
+           <Side className="sides" />
+           <PReplyhelp/>
 
-                    </div>
-
-    </div>
+           <Trending className="trending" />
+         </div>
+       </div>
   )
 }
+

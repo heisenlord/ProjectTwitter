@@ -5,13 +5,14 @@ import { Profileselect } from './Profileselect';
 import { Profileds } from './Profileds';
 export const Profileuser = () => {
   return (
-    <div>
-      <div className='flg'>
-            
-            <Side className="sides"/>
-           <Profileselect/>
-            <Trending/>
-            </div>
+    <div className="main-container">
+    <div className="content-wrapper">
+      <Side className="sides" />
+      <Profileselect/>
+
+      <Trending className="trending" />
     </div>
+  </div>
   )
 }
+

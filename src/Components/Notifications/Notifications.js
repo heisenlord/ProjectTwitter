@@ -4,12 +4,13 @@ import { Trending } from '../Trending/Trending';
 import { Notificationseds } from './Notificationseds';
 export const Notifications = () => {
   return (
-    <div><div className='flg'>
-                
-                <Side className="sides"/>
-               <Notificationseds/>
-                <Trending/>
-                </div>
-                </div>
+    <div className="main-container">
+         <div className="content-wrapper">
+           <Side className="sides" />
+           <Notificationseds/>
+
+           <Trending className="trending" />
+         </div>
+       </div>
   )
 }

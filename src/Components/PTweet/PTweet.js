@@ -8,14 +8,18 @@ import './PTweet.css';
 export const PTweet = () => {
   return (
     <div>
-        <div className='flg'>
-                    
-                    <Side className="sides"/>
-                    <div className='space'>
-                   <PSpace  />
-                   </div>
-                    <Trending/>
-                </div>
-    </div>
+            <div className="main-container">
+            <div className="content-wrapper">
+              <Side className="sides" />
+              <div className='space spaceh'>
+<PSpace  />
+</div>
+   
+              <Trending className="trending" />
+            </div>
+          </div>
+       </div>
   )
 }
+
+ 

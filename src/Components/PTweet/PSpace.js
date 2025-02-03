@@ -105,13 +105,15 @@ export const PSpace = () => {
     <div>
       <div className="post-details">
         {/* Main Post */}
-        <PostReply
+        <div className="preply">
+        <PostReply  
           id={post.id}
           profilePic={profilePic || pp || profilpp} // Handle undefined profile pic
           name={post.name}
           handle={post.handle}
           tweet={post.tweet}
         />
+        </div>
 
         {/* Replies */}
         <p>Replies</p>
