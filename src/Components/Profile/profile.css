@@ -103,3 +103,16 @@
     margin-bottom: 1.2rem;
 
 }
+@media (max-width:756px) {
+    
+    .inputdivimg{
+        width: 100%;
+        overflow: auto;
+     
+    }
+    .imgppps{
+        margin: 5px;
+    }
+ 
+
+}
