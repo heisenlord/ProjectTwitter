@@ -56,7 +56,7 @@ export const PSpace = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/post/${id}`);
+        const response = await axios.get(`https://notatwitterbackend-1.onrender.com/post/${id}`);
         setPost(response.data);
       } catch (err) {
         console.error("Error fetching post:", err);

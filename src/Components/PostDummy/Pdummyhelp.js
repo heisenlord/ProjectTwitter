@@ -60,7 +60,7 @@ export const Pdummyhelp = () => {
 
     const fetchPost = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/post/${idList[index]}`);
+        const response = await fetch(`https://notatwitterbackend-1.onrender.com/post/${did}`);
         if (!response.ok) {
           throw new Error("Failed to fetch post");
         }

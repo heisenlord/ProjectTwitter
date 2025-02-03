@@ -21,7 +21,7 @@ export const Space = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/posts/byname/${name}`);
+        const response = await axios.get(`https://notatwitterbackend-1.onrender.com/posts/byname/${name}`);
         const reversedPosts = response.data.reverse();
         setPosts(reversedPosts);
       } catch (error) {
@@ -42,7 +42,7 @@ export const Space = () => {
     const postId = uuidv4(); // Generate a unique ID for the post
   
     try {
-      const response = await axios.post("http://localhost:3000/generate", {
+      const response = await axios.post("https://notatwitterbackend-1.onrender.com/generate", {
         prompt: postContent,
         pid: postId,
         name: name, 

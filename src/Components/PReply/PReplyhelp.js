@@ -8,7 +8,7 @@ import './preply.css';
 
 const sendReply = async (id, repid, postusid, postProfilepic, postTweet, postreplyid, postReplyPic, replyText, setReplies) => {
   try {
-    const response = await axios.post('http://localhost:3000/generatereply', {
+    const response = await axios.post('https://notatwitterbackend-1.onrender.com/generatereply', {
       pid: `${id}${repid}`,
       prompt: postTweet,
       name: [postusid, postreplyid],
@@ -38,8 +38,8 @@ export const PReplyhelp = () => {
     const fetchReplies = async () => {
       setLoadingReplies(true);
       try {
-        console.log(`Requesting URL: http://localhost:3000/generatereply/getreplies/${id}${repid}`);
-        const response = await axios.get(`http://localhost:3000/generatereply/getreplies/${id}${repid}`);
+        console.log(`Requesting URL: https://notatwitterbackend-1.onrender.com/generatereply/getreplies/${id}${repid}`);
+        const response = await axios.get(`https://notatwitterbackend-1.onrender.com/generatereply/getreplies/${id}${repid}`);
 
         setReplies(response.data.replies);  // Set replies when fetched
       } catch (error) {
