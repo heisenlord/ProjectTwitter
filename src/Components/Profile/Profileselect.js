@@ -40,7 +40,7 @@ export const Profileselect = () => {
               setUsernameMessage("Login successful! Redirecting...");
               setTimeout(() => navigate(`/${username}`), 1000);
             } else {
-              setPasswordMessage("Incorrect password. Try again.");
+              setPasswordMessage("Incorrect password or userid already exist try with new user id. Try again.");
             }
           } else {
             await axios.post("https://notatwitterbackend-1.onrender.com/check/saveuser/u", {
@@ -64,12 +64,13 @@ export const Profileselect = () => {
   };
 
   return (
-    <div className='space'>
+    <div className='space spaceundefined'>
       <div className='pswelcom'>
         <p>
           Hey there! Welcome to <strong>Not<span className="Aspan">A</span>Twitter</strong>
           <br /> <span className='spanreal'>where conversations get real, but people don’t!</span>
         </p>
+        <p className='spanreal'>login or signup to continue</p>
       </div>
 
       <div className="inputuser">
@@ -97,12 +98,12 @@ export const Profileselect = () => {
               onChange={handlePasswordChange}
               onKeyDown={handleKeyPress}
             />
-            <h2>Enter key to submit</h2>
+            <h2>return/enter key in password to submit</h2>
           </>
         )}
 
         {usernameMessage && <h1>{usernameMessage}</h1>}
-        {passwordMessage && <h1>{passwordMessage}</h1>}
+        {passwordMessage && <h1 className='password'>{passwordMessage}</h1>}
 
         <h1>Select your beta user profile</h1>
         <div className='inputdivimg'>

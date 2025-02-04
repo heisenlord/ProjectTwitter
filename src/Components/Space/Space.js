@@ -67,7 +67,8 @@ export const Space = () => {
       navigate(`${location.pathname}/post/${postId}`);
     } catch (error) {
       console.error("Error posting content:", error);
-      alert("Something went wrong. Please try again.");
+      navigate("/")
+      // alert("Something went wrong. Please try again.");
     } finally {
       setIsLoading(false); // Set loading to false
     }

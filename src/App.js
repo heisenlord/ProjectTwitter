@@ -15,6 +15,7 @@ import { Profileuser } from './Components/Profile/Profileuser';
 import { UserProvider } from '../src/Components/UserContext'; // Adjust the path as needed
 import { PReply } from './Components/PReply/PReply';
 import { Postdummy } from './Components/PostDummy/Postdummy';
+import { Profileselect } from './Components/Profile/Profileselect';
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
        <BrowserRouter>
         <Routes>
         <Route path="/" element={<Profileuser />} />
-   
+
           <Route path="/post/:id" element={<PTweet/>}/>
           <Route path="/notifications" element={<Notifications/>}/>
           <Route path="/search" element={<Search/>}/>

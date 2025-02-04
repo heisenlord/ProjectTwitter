@@ -7,7 +7,7 @@ export const Profileuser = () => {
   return (
     <div className="main-container">
     <div className="content-wrapper">
-      <Side className="sides" />
+      <Side  />
       <Profileselect/>
 
       <Trending className="trending" />

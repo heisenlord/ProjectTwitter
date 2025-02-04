@@ -103,6 +103,9 @@
     margin-bottom: 1.2rem;
 
 }
+.password{
+    text-align: center;
+}
 @media (max-width:756px) {
     
     .inputdivimg{
@@ -115,6 +118,9 @@
         width: 60px;
         height: 60px;
         margin: 5px;
+    }
+    .pswelcom>p{
+        font-size: larger;
     }
  
 
