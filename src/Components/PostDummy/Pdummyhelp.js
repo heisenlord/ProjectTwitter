@@ -9,9 +9,9 @@ export const Pdummyhelp = () => {
   const index = parseInt(did) - 1 || 0;
 
   const idList = [
-    "24f5c4e8-1585-40dd-98da-ac9d23b964f5",
-    "681d81f8-19f7-4a84-acd7-854098891a8d",
-    "53a6c981-b1a3-4749-a777-9fbaaf2d3622",
+    "3c8a54b8-34f4-449e-a6c6-88b700fb541e",
+    "220faddb-bc76-4d14-8480-6bca71a4f2db",
+    "bb9135e7-bbbe-4e2a-b35f-4b132de8bbaf",
   ];
   
   const profilePics = [
@@ -42,10 +42,11 @@ export const Pdummyhelp = () => {
       setLoading(false);
       return;
     }
-
+  
     const fetchPost = async () => {
       try {
-        const { data } = await axios.get(`https://notatwitterbackend-1.onrender.com/post/${did}`);
+        console.log(`Fetching: ${dummypics[index]}`);
+        const { data } = await axios.get(`https://notatwitterbackend-1.onrender.com/post/${idList[index]}`);
         setPost(data);
       } catch (err) {
         setError(err.message);
@@ -53,9 +54,10 @@ export const Pdummyhelp = () => {
         setLoading(false);
       }
     };
-
+  
     fetchPost();
-  }, [index, did]);
+  }, [index]);
+  
 
   useEffect(() => {
     if (post?.replies) {
@@ -86,7 +88,7 @@ export const Pdummyhelp = () => {
   if (!post) return <p>No post found</p>;
 
   return (
-    <div>
+    <div className=" pdummyhelp">
       <PostReplyothers
         id={tweetjson.users[index].username}
         profilePic={dummypics[index % dummypics.length]}

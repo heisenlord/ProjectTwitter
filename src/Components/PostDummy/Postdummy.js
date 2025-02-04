@@ -5,17 +5,16 @@ import { Trending } from '../Trending/Trending';
 import { Pdummyhelp } from './Pdummyhelp';
 export const Postdummy = () => {
   return (
-    <div>
-        <div className='flg'>
-                            
-                            <Side className="sides"/>
-                            <div className='space'>
-                           <Pdummyhelp />
-                           </div>
-                            <Trending/>
-        
-                            </div>
-        
+    <div className="main-container">
+    <div className="content-wrapper">
+      <Side className="sides" />
+    <div className="space pdummyhelp"> <Pdummyhelp /></div>
+    
+   
+
+      <Trending className="trending" />
     </div>
+  </div>
   )
 }
+
