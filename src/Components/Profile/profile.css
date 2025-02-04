@@ -128,3 +128,11 @@
  
 
 }
+
+@media (max-height:600px) {
+    .spaceundefined{
+      height: 90vh;
+      overflow: auto;
+    }
+    
+  }
