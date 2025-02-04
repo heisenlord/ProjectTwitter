@@ -106,8 +106,11 @@
 .password{
     text-align: center;
 }
+
 @media (max-width:756px) {
-    
+    .inputuser{
+        margin-bottom: 30px;
+    }
     .inputdivimg{
 
         width: 100%;
