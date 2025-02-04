@@ -12,7 +12,7 @@
   
   /* Responsive Layout */
   @media (max-width: 768px) {
-    .main-containe{
+    .main-container{
         padding: none;
        
     }
@@ -31,6 +31,13 @@
     .space{
       margin-top: 1rem;
       height: 76vh;
+    }
+
+    
+  }
+  @media (max-height:600px) {
+    .space{
+      height: 90vh;
     }
     
   }

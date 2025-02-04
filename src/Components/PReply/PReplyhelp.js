@@ -75,7 +75,7 @@ export const PReplyhelp = () => {
   };
 
   return (
-    <div className='space'>
+    <div className='space prspace'>
       <PostReply id={postusid} profilePic={postProfilepic} name={postusid} handle={postusid} tweet={postTweet} />
       <p>REPLY CHAT</p>
       <ul className='replies'>

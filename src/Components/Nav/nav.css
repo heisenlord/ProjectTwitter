@@ -61,4 +61,7 @@ p{
         position: fixed;
      
     }
+    .Nav{
+        filter: blur(1);
+    }
 }

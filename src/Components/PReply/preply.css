@@ -33,3 +33,10 @@
 }
 
 
+@media (max-height:600px) {
+    .prspace{
+      height: 90vh;
+      overflow: auto;
+    }
+    
+  }
