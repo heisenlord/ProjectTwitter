@@ -16,7 +16,7 @@ export const Profileselect = () => {
   ];
 
   // Use UserContext to get username, setUsername, profilePic, setProfilePic
-  const { username, setUsername, profilePic, setProfilePic } = useContext(UserContext);
+  const { username="test", setUsername, profilePic, setProfilePic } = useContext(UserContext);
 
   const [password, setPassword] = useState("");
   const [usernameMessage, setUsernameMessage] = useState("");

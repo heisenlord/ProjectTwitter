@@ -10,7 +10,8 @@ import { UserContext } from '../UserContext';
 
 export const Space = () => {
   const { username, profilePic,pp } = useContext(UserContext);
-  const { name } = useParams(); // Extract name from the URL
+  const { name="test" } = useParams(); 
+  // Extract name from the URL
   const [postContent, setPostContent] = useState(""); // For new post input
   const [posts, setPosts] = useState([]); // To hold all posts
   const [isLoading, setIsLoading] = useState(false); // Loading state
@@ -98,6 +99,7 @@ export const Space = () => {
         >
           <p className="pspacebutton">{isLoading ? "Posting..." : "NotPost"}</p>
         </button>
+       { username?(<p></p>):(<p>login/signup to continue</p>)}
       </div>
       <div className="line"></div>
 
