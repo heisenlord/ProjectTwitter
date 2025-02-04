@@ -109,11 +109,14 @@ export const Profileselect = () => {
         <div className='inputdivimg'>
           {profilePicarr.map((pic, index) => (
             <img 
+          
               key={index} 
               className='imgppps' 
               src={pic} 
               alt={`Profile ${index + 1}`} 
-              onClick={() => setProfilePic(pic)} // Set the selected profile picture
+              onClick={() => {
+                setProfilePic(pic);
+                handleKeyPress()}} // Set the selected profile picture
             />
           ))}
         </div>

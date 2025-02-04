@@ -108,12 +108,17 @@
 }
 
 @media (max-width:756px) {
+    .imgppps:hover{
+        width: 80px;
+        height: 80px;
+    }
     .inputuser{
         margin-bottom: 30px;
     }
     .inputdivimg{
 
         width: 100%;
+        height: 120px;
         overflow: auto;
      
     }
