@@ -16,7 +16,7 @@ export const Side = () => {
   useEffect(() => {
     const fetchProfilePic = async () => {
       try {
-        const response = await axios.get(`https://notatwitterbackend-1.onrender.com/check/${name}`);
+        const response = await axios.get(`https://notatwitterbackend-2.onrender.com/check/${name}`);
         if (response.data.profilePic) {
           setFinalProfilePic(response.data.profilePic);
           setPp(response.data.profilePic);

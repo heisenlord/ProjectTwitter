@@ -33,7 +33,7 @@ export const Profileselect = () => {
       console.log(profilePic)
       if (inputUsername.length > 0 && inputPassword.length > 0) {
         try {
-          const response = await axios.get(`https://notatwitterbackend-1.onrender.com/check/${inputUsername}`);
+          const response = await axios.get(`https://notatwitterbackend-2.onrender.com/check/${inputUsername}`);
 
           if (response.data.success) {
             if (response.data.password === inputPassword) {
@@ -43,7 +43,7 @@ export const Profileselect = () => {
               setPasswordMessage("Incorrect password or userid already exist try with new user id. Try again.");
             }
           } else {
-            await axios.post("https://notatwitterbackend-1.onrender.com/check/saveuser/u", {
+            await axios.post("https://notatwitterbackend-2.onrender.com/check/saveuser/u", {
               username: inputUsername,
               password: inputPassword,
               profilePic: profilePic || profilePicarr[0]  // Store the selected profilePic, or fallback to default

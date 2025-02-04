@@ -8,7 +8,7 @@ import './preply.css';
 
 const sendReply = async (id, repid, postusid, postProfilepic, postTweet, postreplyid, postReplyPic, replyText, setReplies) => {
   try {
-    const response = await axios.post('https://notatwitterbackend-1.onrender.com/generatereply', {
+    const response = await axios.post('https://notatwitterbackend-2.onrender.com/generatereply', {
       pid: `${id}${repid}`,
       prompt: postTweet,
       name: [postusid, postreplyid],

@@ -46,7 +46,7 @@ export const Pdummyhelp = () => {
     const fetchPost = async () => {
       try {
         console.log(`Fetching: ${dummypics[index]}`);
-        const { data } = await axios.get(`https://notatwitterbackend-1.onrender.com/post/${idList[index]}`);
+        const { data } = await axios.get(`https://notatwitterbackend-2.onrender.com/post/${idList[index]}`);
         setPost(data);
       } catch (err) {
         setError(err.message);
