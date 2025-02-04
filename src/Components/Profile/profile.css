@@ -106,13 +106,29 @@
 .password{
     text-align: center;
 }
+.submitselect{
+    padding: 0;
+}
 
 @media (max-width:756px) {
-    .imgppps:hover{
+    .profilePicPreview{
         width: 80px;
         height: 80px;
+        object-fit: cover;
+        border-radius: 5rem;
+        padding: 1rem;
+        filter: grayscale(10);
+        background-color: rgb(255, 255, 255);
+        margin-bottom: 1.2rem;
+    
+    }
+    .imgppps:hover{
+       background-color: antiquewhite;
+       width: 60px;
+       height: 60px;
     }
     .inputuser{
+     
         margin-bottom: 30px;
     }
     .inputdivimg{
@@ -130,11 +146,18 @@
     .pswelcom>p{
         font-size: larger;
     }
+    .spaceundefined{
+        height: 80vh;
+        overflow: auto;
+      }
+      .useridinput{
+        margin: 0px;
+      }
  
 
 }
 
-@media (max-height:600px) {
+@media (max-height:700px) {
     .spaceundefined{
       height: 90vh;
       overflow: auto;
