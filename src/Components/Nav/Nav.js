@@ -4,6 +4,8 @@ import './nav.css';
 
 export const Nav = () => {
   return (
+    <div className='navblur'>
+      <div className='blured'>
     <div className='Nav'>
  
         <ul className='navul'>
@@ -20,7 +22,8 @@ export const Nav = () => {
                 </p>
             </li>
         </ul>
-       
+        </div>
+        </div>
     </div>
   )
 }

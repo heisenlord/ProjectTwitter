@@ -35,8 +35,8 @@ p{
   flex-direction: row;
 }
 .sides{
-  position: sticky;
+  position: pointer;
 }
 .App{
-  cursor: grab;
+ cursor: grab;
 }

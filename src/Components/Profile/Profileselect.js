@@ -81,26 +81,28 @@ export const Profileselect = () => {
         <label htmlFor="userid"><p>{username}</p></label>
 
         {!isUsernameEntered && (
-          <>
-            <textarea id='usernameinp'
-              className="useridinput spacetext stextarea w-50 bg-transparent text-xl placeholder-twitter-gray outline-none resize-none textarea-font"
-              placeholder="What's your username?"
-              rows={1}
-              value={username}
-              onChange={handleUsernameChange}
-            />
+  <>
+    <input
+      id="usernameinp"
+      type="text"
+      className="useridinput spacetext stextarea w-50 bg-transparent text-xl placeholder-twitter-gray outline-none resize-none textarea-font"
+      placeholder="What's your username?"
+      value={username}
+      onChange={handleUsernameChange}
+    />
 
-            <textarea 
-              className="useridinput spacetext stextarea w-50 bg-transparent text-xl placeholder-twitter-gray outline-none resize-none textarea-font"
-              placeholder="What's your password?"
-              rows={1}
-              value={password}
-              onChange={handlePasswordChange}
-              onKeyDown={handleKeyPress}
-            />
-            <h2>return/enter key in password to submit</h2>
-          </>
-        )}
+    <input
+      type="password"
+      className="useridinput spacetext stextarea w-50 bg-transparent text-xl placeholder-twitter-gray outline-none resize-none textarea-font"
+      placeholder="What's your password?"
+      value={password}
+      onChange={handlePasswordChange}
+      onKeyDown={handleKeyPress}
+    />
+    <h2>Press return/enter to submit</h2>
+  </>
+)}
+
 
         {usernameMessage && <h1>{usernameMessage}</h1>}
         {passwordMessage && <h1 className='password'>{passwordMessage}</h1>}

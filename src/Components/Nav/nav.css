@@ -1,8 +1,21 @@
+.navblur{
+    height: 10vh;
+    width: 100%;
+   
+  
+}
+.blured{
+    backdrop-filter: blur(50px);
+}
 .Nav{
-    
+    position: fixed;
+    backdrop-filter: blur(50px);
+ 
     width: 60%;
+    
 }
 p{
+    
     text-align: center;
 }
 .navul{
@@ -12,6 +25,7 @@ p{
     justify-content: space-between;
     align-items: center;
     margin: 20px;
+  
 }
 .navli{
     width: 85px;
@@ -61,7 +75,5 @@ p{
         position: fixed;
      
     }
-    .Nav{
-        filter: blur(1);
-    }
+   
 }

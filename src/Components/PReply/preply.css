@@ -32,11 +32,3 @@
 
 }
 
-
-@media (max-height:600px) {
-    .profileedsspace{
-      height: 90vh;
-      overflow: auto;
-    }
-    
-  }
