@@ -1,3 +1,6 @@
+.post{
+    overflow-x: hidden;
+}
 .space{
     width: 50vw;
     height: 90vh;
