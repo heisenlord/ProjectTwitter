@@ -38,8 +38,8 @@ export const PReplyhelp = () => {
     const fetchReplies = async () => {
       setLoadingReplies(true);
       try {
-        console.log(`Requesting URL: https://notatwitterbackend-1.onrender.com/generatereply/getreplies/${id}${repid}`);
-        const response = await axios.get(`https://notatwitterbackend-1.onrender.com/generatereply/getreplies/${id}${repid}`);
+        console.log(`Requesting URL: https://notatwitterbackend-2.onrender.com/generatereply/getreplies/${id}${repid}`);
+        const response = await axios.get(`https://notatwitterbackend-2.onrender.com/generatereply/getreplies/${id}${repid}`);
 
         setReplies(response.data.replies);  // Set replies when fetched
       } catch (error) {
