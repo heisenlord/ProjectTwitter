@@ -6,12 +6,14 @@ import { Side } from '../Side/Side';
 import { Trending } from '../Trending/Trending';
 import { PSpace } from './PSpace';
 import { MetaTags } from '../MetaTags';
+import { TwitterCardDebug } from '../TwitterCardDebug';
 import { UserContext } from '../UserContext';
 import './PTweet.css';
 
 export const PTweet = () => {
   const { id } = useParams();
   const [post, setPost] = useState(null);
+  const [replies, setReplies] = useState([]);
   const [loading, setLoading] = useState(true);
   const { currentPostOwner, currentPostId } = useContext(UserContext);
 
@@ -19,7 +21,25 @@ export const PTweet = () => {
     const fetchPost = async () => {
       try {
         const response = await axios.get(`https://notatwitterbackend-2.onrender.com/post/${id}`);
-        setPost(response.data);
+        const fetchedPost = response.data;
+        setPost(fetchedPost);
+        
+        // Parse replies if they exist
+        if (fetchedPost.replies) {
+          let parsedReplies = fetchedPost.replies;
+          
+          if (typeof parsedReplies === "string") {
+            parsedReplies = parsedReplies.replace(/^\s*```json\s*/, "").replace(/```\s*$/, "").trim();
+            try {
+              parsedReplies = JSON.parse(parsedReplies);
+            } catch (error) {
+              console.error("Invalid replies JSON:", error);
+              parsedReplies = [];
+            }
+          }
+          
+          setReplies(parsedReplies || []);
+        }
       } catch (error) {
         console.error("Error fetching post:", error);
       } finally {
@@ -39,8 +59,34 @@ export const PTweet = () => {
     const postProfilePic = currentPostOwner ? currentPostOwner.profilePic : post.profilePic;
     const postContent = post.tweet;
     
-    const title = `${postAuthor} on NotATwitter: "${postContent.substring(0, 50)}${postContent.length > 50 ? '...' : ''}"`;
-    const description = postContent.length > 160 ? `${postContent.substring(0, 160)}...` : postContent;
+    // Create rich title with post preview
+    const title = `${postAuthor} on NotATwitter: "${postContent.substring(0, 60)}${postContent.length > 60 ? '...' : ''}"`;
+    
+    // Create Twitter-optimized description
+    let description = `"${postContent}"`;
+    
+    // Add reply information for Twitter
+    if (replies && replies.length > 0) {
+      description += `\n\n💬 ${replies.length} ${replies.length === 1 ? 'reply' : 'replies'}`;
+      
+      // Add top replies for Twitter preview (shortened for character limits)
+      if (replies.length > 0) {
+        const topReplies = replies.slice(0, 2); // Fewer replies for Twitter
+        description += '\n\nTop replies:';
+        topReplies.forEach((reply) => {
+          const replyUsername = reply.username ? reply.username.slice(1) : 'Anonymous';
+          const replyText = reply.reply.substring(0, 50); // Shorter for Twitter
+          description += `\n• @${replyUsername}: ${replyText}${reply.reply.length > 50 ? '...' : ''}`;
+        });
+        
+        if (replies.length > 2) {
+          description += `\n+ ${replies.length - 2} more replies`;
+        }
+      }
+    }
+    
+    description += `\n\n🎯 Join the conversation on NotATwitter!`;
+    
     const image = postProfilePic || 'https://notatwitter.vercel.app/logo2.png';
     const url = `${window.location.origin}/post/${id}`;
 
@@ -51,7 +97,9 @@ export const PTweet = () => {
       url,
       author: postAuthor,
       authorHandle: postAuthorHandle,
-      postContent
+      postContent,
+      replyCount: replies.length,
+      topReplies: replies.slice(0, 3)
     };
   };
 
@@ -68,6 +116,8 @@ export const PTweet = () => {
           author={metadata.author}
           authorHandle={metadata.authorHandle}
           postContent={metadata.postContent}
+          replyCount={metadata.replyCount}
+          topReplies={metadata.topReplies}
         />
       )}
       <div className="main-container">
@@ -79,6 +129,11 @@ export const PTweet = () => {
           <Trending className="trending" />
         </div>
       </div>
+      
+      {/* Twitter Card Debug Tool - Only show in development or for testing */}
+      {!loading && post && (
+        <TwitterCardDebug postUrl={metadata.url} />
+      )}
     </div>
   )
 }
