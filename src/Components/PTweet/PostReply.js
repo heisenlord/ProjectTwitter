@@ -3,6 +3,7 @@ import { Svg } from '../Post/Svg';
 import { Like } from '../Post/Like';
 import { Bookmark } from '../Post/Bookmark';
 import { Comment } from '../Post/Comment';
+import { Share } from '../Post/Share';
 
 export const PostReply = ({ id, profilePic, name, handle, tweet }) => {
 
@@ -29,6 +30,7 @@ export const PostReply = ({ id, profilePic, name, handle, tweet }) => {
         <li><Comment /></li>
         <li><Bookmark /></li>
         <li><Like /></li>
+        <li><Share postId={id} postContent={tweet} postAuthor={name} postAuthorHandle={handle} /></li>
       </ul>
     </div>
 
@@ -64,6 +66,7 @@ export const PostReplyothers = ({ id, profilePic, name, handle, tweet }) => {
         <li><Comment /></li>
         <li><Bookmark /></li>
         <li><Like /></li>
+        <li><Share postId={id} postContent={tweet} postAuthor={name} postAuthorHandle={handle} /></li>
       </ul>
     </div>
 

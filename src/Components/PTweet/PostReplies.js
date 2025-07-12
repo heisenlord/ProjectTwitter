@@ -4,6 +4,7 @@ import { Svg } from '../Post/Svg';
 import { Like } from '../Post/Like';
 import { Bookmark } from '../Post/Bookmark';
 import { Comment } from '../Post/Comment';
+import { Share } from '../Post/Share';
 import './postReplies.css';
 import { UserContext } from '../UserContext';
 
@@ -69,6 +70,7 @@ export const PostReplies = ({repid, postid, id, profilePic, name, handle, tweet,
           <li><Comment /></li>
           <li><Bookmark /></li>
           <li><Like /></li>
+          <li><Share postId={id} postContent={tweet} postAuthor={name} postAuthorHandle={handle} /></li>
         </ul>
       </div>
     </div>

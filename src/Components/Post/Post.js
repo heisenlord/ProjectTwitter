@@ -7,6 +7,7 @@ import { Svg } from './Svg';
 import { Like } from './Like';
 import { Bookmark } from './Bookmark';
 import { Comment } from './Comment';
+import { Share } from './Share';
 import { useNavigate, useParams } from 'react-router-dom';
 import { UserContext } from '../UserContext';
 
@@ -69,6 +70,7 @@ export const PostItem = ({ id, profilePic, name, handle, tweet }) => {
         <li><Comment /></li>
         <li><Bookmark /></li>
         <li><Like /></li>
+        <li><Share postId={id} postContent={tweet} postAuthor={name} postAuthorHandle={handle} /></li>
       </ul>
     </div>
     <div className="line"></div>
@@ -112,6 +114,7 @@ export const PostOthers = ({ id, profilePic, name, handle, tweet }) => {
         <li><Comment /></li>
         <li><Bookmark /></li>
         <li><Like /></li>
+        <li><Share postId={id} postContent={tweet} postAuthor={name} postAuthorHandle={handle} /></li>
       </ul>
     </div>
     <div className="line"></div>
