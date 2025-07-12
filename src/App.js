@@ -12,6 +12,7 @@ import { Notifications } from './Components/Notifications/Notifications';
 import { Search } from './Components/Search/Search';
 import { Bookmarks } from './Components/Bookmarks/Bookmarks';
 import { Profileuser } from './Components/Profile/Profileuser';
+import { ProfileWelcome } from './Components/Profile/ProfileWelcome';
 import { UserProvider } from '../src/Components/UserContext';
 import { PReply } from './Components/PReply/PReply';
 import { Postdummy } from './Components/PostDummy/Postdummy';
@@ -31,7 +32,10 @@ function App() {
             <Route path="/home" element={<Mainpage />} />
             
             {/* Profile route */}
-            <Route path="/profile" element={<Profileuser />} />
+            <Route path="/profile" element={<ProfileWelcome />} />
+            
+            {/* Login route */}
+            <Route path="/login" element={<Profileuser />} />
             
             {/* Post routes */}
             <Route path="/post/:id" element={<PTweet />} />

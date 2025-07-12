@@ -98,23 +98,11 @@ export const Side = () => {
 
         {/* Profile Pic Link */}
         <li className="profilepics lipp">
-          {isLoggedIn ? (
-            <div className="logged-in-profile">
-              <Link to="/profile" className="btn">
-                <img className="sideimgpp ppp sidepp" src={navProfilePic} alt="Profile"/>
-              </Link>
-              <div className="user-info">
-                <p className="username-display">Logged as @{username}</p>
-                <button className="logout-btn" onClick={handleLogout}>
-                  Logout
-                </button>
-              </div>
-            </div>
-          ) : (
+       
             <Link to="/profile" className="btn">
               <img className="sideimgpp ppp sidepp" src={navProfilePic} alt="Profile"/>
             </Link>
-          )}
+          
         </li>
 
         {/* User Status - Alternative placement */}

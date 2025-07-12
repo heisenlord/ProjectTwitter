@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
+
 .profilepic {
   width: 200px;
   height: 200px;
@@ -27,6 +29,7 @@
   align-items: center;
   justify-content: start;
   flex-direction: column;
+  font-family: 'Jersey 15', cursive;
 }
 .fullpost {
   width: 100%;
@@ -105,6 +108,61 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 1rem;
+}
+
+.welcome-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  font-family: 'Jersey 15', cursive;
+}
+
+.welcome-btn {
+  background-color: white;
+  color: black;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  min-width: 180px;
+  text-align: center;
+  border: 2px solid white;
+  font-family: 'Jersey 15', cursive;
+  font-size: 16px;
+}
+
+.welcome-btn:hover {
+  background-color: #f8f9fa;
+  text-decoration: none;
+  color: black;
+}
+
+.logout-btn {
+  background-color: #ff0000 !important;
+  color: white !important;
+  border: 2px solid #ff0000 !important;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #cc0000 !important;
+  border-color: #cc0000 !important;
+}
+
+.Bioh1 {
+  font-size: 1.1rem;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: rgba(29, 161, 242, 0.1);
+  border-radius: 15px;
+  border: 1px solid rgba(29, 161, 242, 0.3);
+  font-family: 'Jersey 15', cursive;
 }
 
 .spinner {
