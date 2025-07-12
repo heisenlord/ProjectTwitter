@@ -1,0 +1,89 @@
+.replying{
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: rgb(255, 255, 255);
+}
+.replyingli{
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    
+}
+.repblue{
+    color: rgb(39, 132, 190);
+    font-weight: 100;
+    margin-left: 0.2rem;
+}
+.btnrep{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   height: 30px;
+
+
+}
+.pspacebutton{
+    width: 100%;
+    text-align: end;
+}
+.btnrepdiv{
+    padding-bottom: 1.5rem;
+
+}
+
+.postcontent{
+    width: 100%;
+}
+
+.anonymous-notice {
+    font-size: 0.9rem;
+    color: #8b949e;
+    margin-top: 5px;
+    text-align: left;
+    font-style: italic;
+}
+
+.reply-as-notice {
+    margin-bottom: 10px;
+}
+
+.anonymous-info {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.session-info {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-top: 3px;
+    font-family: monospace;
+}
+
+.logged-in-info {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.user-notice {
+    font-size: 0.9rem;
+    color: #1d9bf0;
+    margin-top: 5px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.viewing-other-post {
+    padding: 8px 15px;
+    background-color: #0d1117;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 3px solid #1d9bf0;
+}
+
+.viewing-indicator {
+    font-size: 0.85rem;
+    color: #58a6ff;
+    margin: 0;
+    font-weight: 600;
+}

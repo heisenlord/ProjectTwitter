@@ -1,0 +1,213 @@
+.sideul{
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    width: 80px;
+    margin-left: 20px;
+    align-items: space-between;
+    list-style: none;
+    /* border-right: 0.3px rgb(108, 104, 104) solid; */
+
+}
+
+.sideli{
+    margin-bottom: 100px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+
+}
+.sideimg{
+    background-color: rgb(243, 84, 84);
+    border-radius: 10px;
+
+}
+.Side{
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+}
+svg{
+    width: 30px;
+   
+}
+svg path {
+    fill: rgb(255, 255, 255);
+  }
+  
+.not{
+    color: rgb(247, 108, 2);
+}
+.sideimgpp{
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    object-fit: cover;
+}
+.profilepics{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+
+}
+.btn{
+    background-color: black;
+    border: none;
+    cursor: pointer;
+}
+.btn:hover svg{
+    width:40px;
+  
+}
+.ppp{
+    filter: grayscale(1);
+}
+
+@media (max-width:768px) {
+    .Side{
+        width: 0px;
+        height: 3rem;
+        background-color: black;
+    }
+    .sideli{
+        margin-bottom: 0px;
+    }
+    .sideul{
+        border: 1px solid white;
+        border-radius: 5rem;
+        position: fixed;
+        bottom: 20px;
+        left: 0px;
+        flex-direction: row;
+        height: 10vh;
+        width: 100vw;
+        z-index: 1;
+        justify-content: space-around;
+        align-items: center;
+        background-color: black;
+        filter: blur(10);
+        margin-left: 0px;
+    }
+    .flg{
+        margin: 0px;
+    }
+    .profilepics{
+        display: flex;
+        align-items: start;
+        justify-content: start;
+
+    }
+    svg{
+        width: 30px;
+    }
+
+    
+}
+
+.user-status {
+  padding: 10px 20px;
+  border-top: 1px solid #333;
+  margin-top: 10px;
+}
+
+.logged-in-user {
+  text-align: center;
+  color: #fff;
+}
+
+/* Removed duplicate styles - using the ones in logged-in-profile section */
+
+.anonymous-user {
+  text-align: center;
+  color: #8b949e;
+}
+
+.anonymous-display {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.login-link {
+  color: #1d9bf0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 8px 16px;
+  border: 1px solid #1d9bf0;
+  border-radius: 20px;
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+.login-link:hover {
+  background-color: #1d9bf0;
+  color: white;
+}
+
+/* Logged-in profile section styles */
+.logged-in-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  border: 1px solid #333;
+  min-width: 120px;
+}
+
+.username-display {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #1d9bf0;
+  margin: 0;
+  text-align: center;
+}
+
+.logout-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+.logout-btn:hover {
+  background-color: #c82333;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .logged-in-profile {
+    flex-direction: row;
+    gap: 5px;
+  }
+  
+  .user-info {
+    min-width: auto;
+    padding: 4px 8px;
+    background-color: transparent;
+    border: none;
+  }
+  
+  .username-display {
+    font-size: 0.7rem;
+  }
+  
+  .logout-btn {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+  }
+}

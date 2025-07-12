@@ -1,0 +1,174 @@
+.profilepic {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 100px;
+  margin-top: 30px;
+}
+.profileedsspace {
+  background-color: black;
+  display: flex;
+
+  align-items: center;
+  flex-direction: column;
+}
+.profilespace {
+  width: 105%;
+  background-color: black;
+  margin-top: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.proful {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+}
+.fullpost {
+  width: 100%;
+}
+.pswelcom {
+  padding: 10px;
+  border-radius: 1.2rem;
+}
+.inputuser {
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border-radius: 1.2rem;
+  height: 80%;
+}
+.useridtext {
+  color: rgb(0, 0, 0);
+  background-color: black;
+}
+.useridinput {
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+.inputdivimg {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  height: 30%;
+}
+.imgppps {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 5rem;
+  padding: 10px;
+  filter: grayscale(10);
+  background-color: rgb(77, 77, 77);
+  transition: 0.3s;
+}
+.imgppps:hover {
+  width: 100px;
+  height: 100px;
+}
+.imgppps:active {
+  background-color: rgb(255, 255, 255);
+}
+.spanreal {
+  font-size: 1.2rem;
+  color: rgb(255, 255, 255);
+}
+.profilePicPreview {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 5rem;
+  padding: 1rem;
+  filter: grayscale(10);
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 1.2rem;
+}
+.password {
+  text-align: center;
+}
+.submitselect {
+  padding: 0;
+}
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3; /* Light grey */
+  border-top: 4px solid #3498db; /* Blue */
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 756px) {
+  .profilePicPreview {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5rem;
+    padding: 1rem;
+    filter: grayscale(10);
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 1.2rem;
+  }
+  .imgppps:hover {
+    background-color: antiquewhite;
+    width: 60px;
+    height: 60px;
+  }
+  .inputuser {
+    margin-bottom: 30px;
+  }
+  .inputdivimg {
+    width: 100%;
+    height: 120px;
+    overflow: auto;
+  }
+  .imgppps {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+  }
+  .pswelcom > p {
+    font-size: larger;
+  }
+  .spaceundefined {
+    height: 80vh;
+    overflow: auto;
+  }
+  .useridinput {
+    margin: 0px;
+  }
+}
+
+@media (max-height: 700px) {
+  .spaceundefined {
+    height: 90vh;
+    overflow: auto;
+  }
+}

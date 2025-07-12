@@ -1,0 +1,21 @@
+.replies{
+
+    height: 64vh;
+    overflow: auto;
+    background: #000;
+    border-radius:2rem 2rem 2rem 2rem;
+    /* box-shadow: 0px 0px 2rem 2rem #000; */
+    padding-left: 30px;
+
+}
+.replypic{
+    padding: 5px;
+    background-color: white;
+}
+.App{
+    cursor: grab;
+
+}
+#imgfor{
+    filter: grayscale(0);
+}
